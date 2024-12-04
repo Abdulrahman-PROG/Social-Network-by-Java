@@ -51,19 +51,24 @@ public class User {
     }
 
     public void sendFriendRequest(User targetUser) {
-
+        FriendRequest request = new FriendRequest(this, targetUser);
+        targetUser.receiveFriendRequest(request);
     }
 
     private void receiveFriendRequest(FriendRequest request) {
-
+        this.friendRequests.add(request);
     }
 
     public void acceptFriendRequest(FriendRequest request) {
-
+        if (friendRequests.contains(request)) {
+            this.friends.add(request.getSender());
+            request.getSender().getFriends().add(this);
+            this.friendRequests.remove(request);
+        }
     }
 
     public void rejectFriendRequest(FriendRequest request) {
-
+        this.friendRequests.remove(request);
     }
 
     @Override
