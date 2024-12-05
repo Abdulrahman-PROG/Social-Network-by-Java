@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public abstract class Content {
     private String id;
@@ -7,12 +8,14 @@ public abstract class Content {
     private LocalDateTime timestamp;  // Timestamp when the post/comment was created
 
     // Constructor to initialize content
-    public Content(String id, String text, User author) {
-        this.id = id;
+
+    public Content(String text, User author) {
+        this.id = UUID.randomUUID().toString();  // Generates a unique ID
         this.text = text;
         this.author = author;
-        this.timestamp = LocalDateTime.now();  // Automatically set the current time
+        this.timestamp = LocalDateTime.now();
     }
+
 
     public String getId() {
         return id;
