@@ -17,6 +17,7 @@ public class Post extends Content {
     public void display() {
         System.out.println("Post by " + getAuthor().getName() + " at " + getTimestamp());
         System.out.println("Content: " + getText());
+        System.out.println("Likes: " + getLikes());  // Display the number of likes
         System.out.println("Comments:");
         for (Comment comment : comments) {
             comment.display();  // Display each comment
