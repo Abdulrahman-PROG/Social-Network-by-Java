@@ -51,7 +51,16 @@ public abstract class Content {
     public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
+    // Add a like to the content
+    public void addLike(User user) {
+        likes++;
+        System.out.println(user.getName() + " liked the content.");
+    }
 
+    // Get the number of likes
+    public int getLikes() {
+        return likes;
+    }
     // Abstract method for displaying content
     public abstract void display();
 }
