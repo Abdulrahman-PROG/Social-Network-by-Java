@@ -8,16 +8,6 @@ public class Post extends Content {
         super(id, text, author);
         this.comments = new ArrayList<>();  // Initialize the list of comments
     }
-    // Method to add a like to the post
-    public void addLike(User user) {
-        likes++;  // Increment the like count
-        System.out.println(user.getName() + " liked the post.");
-    }
-
-    // Method to get the number of likes for the post
-    public int getLikes() {
-        return likes;
-    }
 
     public void addComment(Comment comment) {
         comments.add(comment);
