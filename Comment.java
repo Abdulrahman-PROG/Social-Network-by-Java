@@ -14,6 +14,7 @@ public class Comment extends Content {
     public void display() {
         System.out.println("Comment by " + getAuthor().getName() + " at " + getTimestamp());
         System.out.println("Content: " + getText());
+        System.out.println("Likes: " + getLikes());  // Display the number of likes
         System.out.println("Replies:");
         for (Comment reply : replies) {
             reply.display();  // Display each reply
