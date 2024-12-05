@@ -8,7 +8,7 @@ public class User {
     private List<FriendRequest>friendRequests;
 
 
-    public User(String username, String user_id, String email, String password) {
+    public User(String user_id, String username, String email, String password) {
         this.username = username;
         this.user_id = user_id;
         this.email = email;
@@ -70,16 +70,8 @@ public class User {
     public void rejectFriendRequest(FriendRequest request) {
         this.friendRequests.remove(request);
     }
-    // Create a new post
-    public void createPost(String postId, String text) {
-        Post newPost = new Post(postId, text, this);  // User creates a post
-        posts.add(newPost);
-    }
 
-    // Like a post or a comment
-    public void likeContent(Content content) {
-        content.addLike(this);  // User likes the content
-    }
+
     @Override
     public String toString() {
         return "User{" +
