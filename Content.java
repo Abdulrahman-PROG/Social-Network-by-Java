@@ -30,6 +30,9 @@ public abstract class Content {
     }
 
     public void setText(String text) {
+        if (text.length() > 1000) {
+            throw new IllegalArgumentException("Text exceeds maximum allowed length.");
+        }
         this.text = text;
     }
 
